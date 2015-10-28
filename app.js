@@ -9,7 +9,8 @@ var path = require('path');
 app.set('port', (process.env.PORT || 5000));
 
 app.get('/bluehat', function(request, response){
-    response.send(console.log("hello!"));
+
+    response.send("hello!");
     //response.send(person);
 });
 
