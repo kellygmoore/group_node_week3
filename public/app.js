@@ -38,22 +38,28 @@ function randomNumber(min, max){
 }
 //Creates random employees from the server as long as there is at least one empty team.
 function assignStaff(){
-    while(frontEndEmployee < 1 && backEndEmployee < 1 && logicEmployee < 1) {
-        $.ajax(
-
-        )
+    //while(frontEndEmployee < 1 && backEndEmployee < 1 && logicEmployee < 1) {
+        $.ajax({
+              type: "GET",
+              url: "/bluehat",
+              success: function(){
+                  console.log("This worked!");
+              }
+            });
     }
-}
+
 //Calculates which team has the largest ration of scrum requirements to scrum points and calculates
 //the number of weeks it will take that team to finish, and thus for the project to reach completion.
 function calculateProjectTime(){
     var back = 0, front = 0, logic = 0;
 
-
+    back = backEndReq/backEndTotal;
+    front = frontEndReq/frontEndTotal;
+    logic = logicReq/logicTotal;
 
     if(front > back && front > logic){
         return front;
-    } else if (back>front && back > logic){
+    } else if (back > front && back > logic){
         return back;
     } else {
         return logic;
