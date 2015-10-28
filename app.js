@@ -16,3 +16,4 @@ app.get("/*", function(request,response) {
 });
 
 app.listen(app.get("port"));
+console.log("Listening...");
