@@ -4,7 +4,7 @@
 
 var peopleArray = ["Irene", "Nicole", "Tina", "Ryan", "Joe", "Helen", "Evelyn", "Denise", "Nicole", "Phillip", "Ruth", "Anne", "Emily",
     "Judith","Joshua","Anna","Tina","John","Kimberly","Martha","Anna","Donna","Juan","Ernest","Michelle","Gloria","Henry","Joyce",
-    "Joan","Robert","Jean","Michelle","Kathleen","Jimmy","Lawrence","Sam","Dane","Heather","Paige","Kelly"
+    "Joan","Robert","Jean","Michelle","Kathleen","Jimmy","Lawrence","Sam","Dane","Heather","Paige","Kelly", "Andy", "Mike", "Scott", "Kris", "Danny", "Pui", "Aron"
 ];
 
 
