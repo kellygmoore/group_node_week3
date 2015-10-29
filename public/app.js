@@ -27,9 +27,15 @@ function generateProject(){
     frontEndReq = randomNumber(10,60);
     backEndReq = randomNumber(10,60);
     logicReq = randomNumber(10,60);
-    $("#projectOverviewDiv").append("<div id='frontEnd' class='taskBox'>Front<div class='well'>" + frontEndReq + "</div></div>" +
-        "<div id='backEnd' class='taskBox'>Back<div class='well'>" + backEndReq + "</div></div>" +
-        "<div id='logic' class='taskBox'>Logic<div class='well'>" + logicReq + "</div></div>");
+    $("#projectOverviewDiv").append("<div id='frontEnd' class='taskBox'>Front<div class='well'>" + frontEndReq +
+        "</div><div class='team', id='frontEndTeam'>Front End Go Here</div>");
+
+    $("#projectOverviewDiv").append( "<div id='backEnd' class='taskBox'>Back<div class='well'>" + backEndReq +
+        "</div><div class='team', id='backEndTeam'>Back End Go Here</div></div>");
+
+    $("#projectOverviewDiv").append("<div id='logic' class='taskBox'>Logic<div class='well'>" + logicReq + "</div>" +
+        "<div class='team', id='logicTeam'>Logic End Go Here</div></div>");
+
     $("#projectOverviewDiv").append("<div id='assignStaffBtn' class='btn btn-lg btn-default'>Assign Staff</div>");
 }
 //Random number generator.
