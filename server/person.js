@@ -6,12 +6,16 @@ var job = require('./job.js');
 var skill = require('./skill.js');
 
 
+
 function Employee(name, job, skill){
     this.name = name;
     this.job = job;
     this.skill = skill;
 }
 
-var makeEmployee = new Employee(name, job, skill);
+var getPerson = function Person(){
+     return new Employee(name(), job(), skill());
+};
 
-module.exports = makeEmployee;
+
+module.exports = getPerson;

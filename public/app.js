@@ -42,8 +42,8 @@ function assignStaff(){
         $.ajax({
               type: "GET",
               url: "/bluehat",
-              success: function(){
-                  console.log("This worked!");
+              success: function(data){
+                  console.log(data);
               }
             });
     }
