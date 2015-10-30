@@ -3,9 +3,9 @@
 var frontEndReq, backEndReq, logicReq;
 
 //number of employees in each category
-var frontEndArray = [];
-var backEndArray = [];
-var logicArray = [];
+var frontEndArray = [],
+        backEndArray = [],
+        logicArray = [];
 
 //total number of points in each scrum category
 var frontEndArrayTotal = 0, backEndArrayTotal = 0, logicArrayTotal = 0;
@@ -13,10 +13,9 @@ var frontEndArrayTotal = 0, backEndArrayTotal = 0, logicArrayTotal = 0;
 //jQuery call
 $(document).ready(function(){
     //Calls the generateProject(generates project requirements) function on click of the generate function button.
-    $("#genButtonDiv").on('click', generateProject)
+    $("#genButtonDiv").on('click', generateProject);
     //Calls the assignstaff (generate employees untill there is one in each category) function on click of the assign staff button
-    $("#projectOverviewDiv").on('click', '#assignStaffBtn', assignStaff)
-
+    $("#projectOverviewDiv").on('click', '#assignStaffBtn', assignStaff);
 });
 
 
@@ -32,6 +31,9 @@ function generateProject(){
     frontEndReq = randomNumber(10,60);
     backEndReq = randomNumber(10,60);
     logicReq = randomNumber(10,60);
+
+    $("#projectOverviewDiv").append("<h1>Code City</h1>");
+
     $("#projectOverviewDiv").append("<div id='frontEnd' class='taskBox'>Front<div class='well'>" + frontEndReq +
         "</div><div class='team', id='frontEndArray'></div>");
 
@@ -57,7 +59,7 @@ function assignStaff() {
             url: "/bluehat",
             success: function (data) {
                 console.log(data);
-                sortJob(data);
+                sortJob(data);              //pull this out in other functions
                 if ((frontEndArray.length == 1) || (backEndArray.length == 1) || (logicArray.length == 1)) {
                     assignStaff();
 
@@ -94,21 +96,25 @@ function calculateProjectTime(){
 
 };
 
-function sortJob(object){
-    if(object.job == "Front End"){
-        frontEndArray.push(object);
-        //console.log(frontEndArray);
-    } else if(object.job == "Back End") {
-        backEndArray.push(object);
-    } else {
-        logicArray.push(object);
+
+function sortJob(employee){
+    switch (employee.job) {
+        case "Front End":
+            frontEndArray.push(employee);
+            break;
+        case "Back End":
+            backEndArray.push(employee);
+            break;
+        case "Logic":
+            logicArray.push(employee);
+            break;
     }
 }
 
 function populateStaff(array) {
     //console.log(array);
-    var y = 0;
-    var $x;
+    var y = 0;          //rename to readable code
+    var $x;             //use $el or employeeElement
     switch (array[0]) {
         case 0:
             $x = $("#frontEnd");
