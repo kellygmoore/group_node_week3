@@ -106,10 +106,11 @@ function sortJob(object){
 }
 
 function populateStaff(array) {
-    //console.log(array);
+    var fun = array.slice(0,1);
+    console.log("here is the array: ", array);
     var y = 0;
     var $x;
-    switch (array[0]) {
+    switch (fun[0]) {
         case 0:
             $x = $("#frontEnd");
             break;
@@ -121,8 +122,9 @@ function populateStaff(array) {
             break;
     }
     console.log($x);
+    $x.find('.team').empty();
     for (i = 1; i < array.length; i++) {
-        $x.append("<div class='employee'>" + array[i].name + "\n" +
+        $x.find('.team').append("<div class='employee'>" + array[i].name + "\n" +
             array[i].skill + "</div>");
         y += array[i].skill;
     }
