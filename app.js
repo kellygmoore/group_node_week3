@@ -18,5 +18,6 @@ app.get("/*", function(request,response) {
     response.sendFile(path.join(__dirname, "./public/", file));
 });
 
-app.listen(app.get("port"));
-console.log("Listening...");
+app.listen(app.get("port"), function(){
+    console.log("Listening...", app.get("port"));
+});

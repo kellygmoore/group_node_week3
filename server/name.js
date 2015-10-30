@@ -20,7 +20,7 @@ function randomNumber(min, max){
 var whichPerson = function(){
 
     var getPersonIndex = randomNumber(0, peopleArray.length-1);
-    return peopleArray.splice(getPersonIndex, 1).toString()
+    return peopleArray.splice(getPersonIndex, 1).toString();
 
 };
 
