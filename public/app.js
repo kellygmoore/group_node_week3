@@ -68,7 +68,7 @@ function assignStaff() {
                     populateStaff(frontEndArray);
                     populateStaff(backEndArray);
                     populateStaff(logicArray);
-
+                    $("#showTimeframeDiv").empty();
                     $("#showTimeframeDiv").append("<h3>This project will take " + calculateProjectTime() + " sprints to complete.</h3>")
                 }
             }
@@ -83,8 +83,6 @@ function calculateProjectTime(){
     front = frontEndReq/frontEndArrayTotal;
     logic = logicReq/logicArrayTotal;
 
-    console.log(backEndReq);
-    console.log("This is the array total: ", backEndArrayTotal)
 
     if(front > back && front > logic){
         return Math.ceil(front);
@@ -94,7 +92,7 @@ function calculateProjectTime(){
         return Math.ceil(logic);
     }
 
-};
+}
 
 
 function sortJob(employee){
